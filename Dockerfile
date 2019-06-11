@@ -19,13 +19,13 @@ RUN apt-get install -y wget; \
 RUN git clone https://github.com/jenniferlu717/Bracken.git \
     && mkdir /opt/bracken  \
     && cd Bracken  \
-    && sh install_bracken.sh
-    && cp bracken install_bracken.sh
-    && cp bracken-build install_bracken.sh
-    && cp src/generate_kmer_distribution.py /opt/bracken
-    && cp src/est_abundance.py /opt/bracken
-    && cp src/kmer2read_distr /opt/bracken
-    && cd ..
+    && sh install_bracken.sh \
+    && cp bracken install_bracken.sh \
+    && cp bracken-build install_bracken.sh \
+    && cp src/generate_kmer_distribution.py /opt/bracken \
+    && cp src/est_abundance.py /opt/bracken \
+    && cp src/kmer2read_distr /opt/bracken \
+    && cd .. \
     && rm -r Bracken
 
 ENV PATH /opt/bracken/:$PATH
